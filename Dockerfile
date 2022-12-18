@@ -43,7 +43,7 @@ RUN cd /workspace/ffmpeg \
     && ./configure \
     && make -j8
 
-RUN echo "find /workspace/ffmpeg -name \"dnxhd_parser.*o\" -type f -exec cp {} /workspace/out/ \;" > /workspace/copy_out.sh \
+RUN echo "find /workspace/ffmpeg -name \"parser.o\" -type f -exec cp {} /workspace/out/ \;" > /workspace/copy_out.sh \
     && chmod +x /workspace/copy_out.sh
 
 CMD [ "bash", "/workspace/copy_out.sh" ]

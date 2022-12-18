@@ -50,12 +50,16 @@
 0x08000d4e - начало секции 
 
 1. movsxd rcx, dword [rbx + 0xc]
+   
    В регистре rcx получаем ссылку на pc->buffer
 2. add rcx, rdi
+   
    Добавляем next к pc->buffer
 3. add rcx, qword [rbx]
+   
    Добавляем pc->last_index к next и pc->buffer
 4. movzx edi, byte [rcx]
+   
    Вычисляем байт по адресу rcx, но так как pc->buffer изначально null - ловим Segmentation fault
 
 ### Решение:

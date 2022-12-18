@@ -47,6 +47,8 @@
 
 ### В ассемблере:
 
+0x08000d4e - начало секции 
+
 1. movsxd rcx, dword [rbx + 0xc]
    В регистре rcx получаем ссылку на pc->buffer
 2. add rcx, rdi
